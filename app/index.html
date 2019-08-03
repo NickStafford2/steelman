@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Steelman</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
@@ -19,6 +19,33 @@
     <li><a href="#!/view1">view1</a></li>
     <li><a href="#!/view2">view2</a></li>
   </ul>
+  <h3>Example below here</h3>
+  <example></example>
+  <h3>Example above here</h3>
+<!--   
+  <invoice></invoice>
+  <hr>
+  <h1>In index.html</h1>
+  <div ng-app="invoice" ng-controller="InvoiceController as invoice">
+    <b>Invoice:</b>
+    <div>
+      Quantity: <input type="number" min="0" ng-model="invoice.qty" required >
+    </div>
+    <div>
+      Costs: <input type="number" min="0" ng-model="invoice.cost" required >
+      <select ng-model="invoice.inCurr">
+        <option ng-repeat="c in invoice.currencies">{{c}}</option>
+      </select>
+    </div>
+    <div>
+      <b>Total:</b>
+      <span ng-repeat="c in invoice.currencies">
+        {{invoice.total(c) | currency:c}}
+      </span><br>
+      <button class="btn" ng-click="invoice.pay()">Pay</button>
+    </div>
+  </div>
+-->  <hr>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -33,9 +60,22 @@
   -->
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
+  
+
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+  
+  <script src="view1/view1.module.js"></script>
+  <script src="view1/view1.controller.js"></script>
+
   <script src="view2/view2.js"></script>
+
+  <script src="invoice/finance.service.js"></script>
+  <script src="invoice/invoice.controller.js"></script>
+
+  <script src="example/example.module.js"></script>
+  <script src="example/example.component.js"></script>
+
   <script src="core/version/version.js"></script>
   <script src="core/version/version-directive.js"></script>
   <script src="core/version/interpolate-filter.js"></script>
